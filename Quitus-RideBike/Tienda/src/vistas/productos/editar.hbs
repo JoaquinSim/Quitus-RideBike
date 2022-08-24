@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="/css/productos/editarProducto.css">
+<div id="contenedor">
+    {{#each Productos}}
+    <form action="/productos/editar/{{idProductoEntradas}}" method="POST" id="f1">
+        <p>Edita Producto </p>
+        <div id="CODIGO">
+            <label id="codigos">Código:</label>
+            <input type="text" name="codigo" id="codigo" value="{{codigo}}" readonly>
+        </div>
+        <div id="PRODUCTO">
+            <label id="producto">Producto :</label>
+            <input type="text" name="NombreProducto" id="NombreProducto" value="{{NombreProducto}}" readonly>
+        </div>
+        <div id="CantidadMedida">
+             <label>Cantidad:</label>
+            <input type="text" value="{{CantidadTotal}} {{unidadmedida}}" readonly>
+        </div>
+        <div id="CANTIDAD">
+            <label>Cantidad Total:</label>
+            <input type="text" id="Cantidad" value="{{cantidadMedida}} Unidades" readonly>
+        </div>
+        <div id="PRECIO">
+            <label id="precios">Precio Original:</label>
+            <input type="text" id="precio" value="{{precioUnidad}}" readonly>
+        </div>
+        <div id="CANTIDADVenta">
+            <label id="cantidad">Cantidad Venta:</label>
+            <input type="text" id="Cantidad" name="cantidadVenta" value="{{cantidadVenta}}" >
+        </div>
+        <div id="PRECIOVenta">
+            <label id="precios">Precio Venta:</label>
+            <input type="text" id="precio" name="precioVenta" value="{{precioVenta}}" >
+        </div>
+        <div id="CADUCIDAD">
+            <label id="caducidad">Fecha Caducidad:</label>
+            <input type="datetime" name="FechaCadusidad" id="FechaCadusidad" value="{{FechaCadusidad}}" readonly>
+        </div>
+        <div id="boton">
+            <button type="submit"> Guardar</button>
+        </div>
+    </form>
+    {{/each}}
+</div>
